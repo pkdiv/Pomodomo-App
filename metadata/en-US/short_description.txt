@@ -1,0 +1,1 @@
+Native Android wrapper for the Pomodoro web app with offline support and haptics.

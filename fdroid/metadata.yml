@@ -1,0 +1,38 @@
+# F-Droid metadata (draft)
+
+This file is a draft of the metadata you submit as a merge request to
+https://gitlab.com/fdroid/fdroiddata (create `metadata/com.pkdiv.pomodoro.yml`
+there). Keep it in sync with `metadata/en-US/` (fastlane-style) which F-Droid
+reads directly from this repository.
+
+```yaml
+Categories:
+  - Time
+License: Apache-2.0
+WebSite: https://apps.pkdiv.com/pomodoro
+SourceCode: https://github.com/pkdiv/todospp
+IssueTracker: https://github.com/pkdiv/todospp/issues
+
+RepoType: git
+Repo: https://github.com/pkdiv/todospp
+
+Builds:
+  - versionName: 1.0.0
+    versionCode: 1
+    commit: f890c33
+    subdir: app
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+CurrentVersion: 1.0.0
+CurrentVersionCode: 1
+```
+
+Notes for submission:
+- Replace the GitHub URLs with your actual public repository.
+- The app is a WebView shell around a hosted service; describe that clearly
+  in the description to address F-Droid's "Non-Free Network" policy concerns.
+- Bump `versionCode` and `versionName` for each release and add a matching
+  entry to `Builds:` plus a `metadata/en-US/changelogs/<versionCode>.txt`.

@@ -1,0 +1,15 @@
+Pomodoro is a lightweight Android wrapper around the Pomodoro web application (https://apps.pkdiv.com/pomodoro). It provides a native-feeling Android experience while keeping the web app as the single source of truth for the timer and all features.
+
+The Android app enhances the web experience with:
+
+- Splash and loading screens
+- Offline detection with clean retry UI and automatic recovery when connectivity returns
+- Pull-to-refresh
+- File picker and download handling support
+- Notification permission handling and haptic feedback
+- Screen wake lock to keep the screen on during sessions
+- Deep link support
+- Back-button handling that follows WebView history first
+- Fullscreen and edge-to-edge display
+
+The application itself is free and open source. The timer, session management, and all business logic run in the hosted web app; this wrapper only provides the Android-native shell around it.
