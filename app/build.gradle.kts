@@ -1,3 +1,5 @@
+import java.util.Base64
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -27,7 +29,7 @@ android {
             if (keystoreB64 != null) {
                 val keystoreFile = File.createTempFile("release-keystore", ".jks").apply {
                     deleteOnExit()
-                    writeBytes(java.util.Base64.getDecoder().decode(keystoreB64))
+                    writeBytes(Base64.getDecoder().decode(keystoreB64))
                 }
                 storeFile = keystoreFile
                 storePassword = System.getenv("KEY_STORE_PASSWORD")
