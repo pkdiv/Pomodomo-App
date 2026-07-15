@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Pomodoro</string>
+
+    <!-- Source of truth: the hosted web app. -->
+    <string name="target_url">https://apps.pkdiv.com/pomodoro</string>
+    <string name="allowed_host">apps.pkdiv.com</string>
+    <string name="allowed_scheme">https</string>
+
+    <!-- Offline / error UI copy. -->
+    <string name="offline_title">You\'re offline</string>
+    <string name="offline_message">We couldn\'t reach the Pomodoro app. Check your connection and try again.</string>
+    <string name="retry">Retry</string>
+    <string name="error_title">Something went wrong</string>
+
+    <!-- Notifications. -->
+    <string name="notification_channel_id">pomodoro_channel</string>
+    <string name="notification_channel_name">Pomodoro</string>
+    <string name="notification_channel_description">Timer completions and reminders</string>
+    <string name="notification_timer_done_title">Time\'s up!</string>
+    <string name="notification_timer_done_text">Your Pomodoro session has finished.</string>
+</resources>

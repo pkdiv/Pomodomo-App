@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Main app theme: Material 3, dark, no action bar, edge-to-edge friendly. -->
+    <style name="Theme.Pomodoro" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:colorBackground">@color/pomo_background</item>
+        <item name="colorPrimary">@color/pomo_primary</item>
+        <item name="colorOnPrimary">@color/pomo_on_primary</item>
+        <item name="colorSurface">@color/pomo_surface</item>
+        <item name="android:colorForeground">@color/pomo_on_surface</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <item name="android:enforceStatusBarContrast">false</item>
+    </style>
+
+    <!-- Splash theme: instant brand-colored background before the WebView paints.
+         No SplashScreen compat dependency needed — a solid window background is the splash. -->
+    <style name="Theme.Pomodoro.Splash" parent="Theme.Pomodoro">
+        <item name="android:windowBackground">@color/pomo_launcher_bg</item>
+    </style>
+</resources>

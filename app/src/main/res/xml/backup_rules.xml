@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- The web app owns all user data; nothing app-specific to back up. -->
+</full-backup-content>
