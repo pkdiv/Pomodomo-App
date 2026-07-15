@@ -19,6 +19,24 @@ android {
         }
     }
 
+    signingConfigs {
+        // Only configured in CI, where signing secrets are injected as env vars.
+        // Local and F-Droid builds leave storeFile null and produce an unsigned APK.
+        create("release") {
+            val keystoreB64 = System.getenv("SIGNING_KEY")
+            if (keystoreB64 != null) {
+                val keystoreFile = File.createTempFile("release-keystore", ".jks").apply {
+                    deleteOnExit()
+                    writeBytes(java.util.Base64.getDecoder().decode(keystoreB64))
+                }
+                storeFile = keystoreFile
+                storePassword = System.getenv("KEY_STORE_PASSWORD")
+                keyAlias = System.getenv("KEY_ALIAS")
+                keyPassword = System.getenv("KEY_PASSWORD")
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -29,6 +47,7 @@ android {
             )
             // WebView debugging must stay disabled in release builds (security).
             isDebuggable = false
+            signingConfig = signingConfigs.getByName("release")
         }
         debug {
             isDebuggable = true
